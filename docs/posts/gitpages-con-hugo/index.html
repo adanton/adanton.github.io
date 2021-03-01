@@ -2,7 +2,7 @@
 <html lang="es">
   <head>
     <meta charset="utf-8" />
-<title>github</title>
+<title>Gitpages con Hugo</title>
 
 
   
@@ -31,8 +31,8 @@
   title="Apuntes de Adanton"
 />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="github"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="Gitpages con Hugo"/>
+<meta name="twitter:description" content="He creado una página web en Github con Hugo para publicar notas y apuntes sobre las cosas que voy probando."/>
 
 
 
@@ -127,10 +127,10 @@
 
     <div class="intro-header">
       <div class="container">
-        <div class="tags-heading">
+        <div class="posts-heading">
           
             <h1>
-              github
+              Gitpages con Hugo
             </h1>
           
           
@@ -142,37 +142,57 @@
 
     
   <div class="container" role="main">
-    <div class="posts-list">
+    <article class="article" class="blog-post">
       
-        
-      
+  <p>He creado una página web en Github con Hugo para publicar notas y apuntes sobre las cosas que voy probando.</p>
+<h2 id="instalación-de-hugo">Instalación de Hugo</h2>
+<p>En linux es fácil instalar Hugo solo tengo que ejecutar:</p>
+<pre><code>sudo apt install hugo
+</code></pre><h2 id="crear-el-sitio">Crear el sitio</h2>
+<p>Lo primero es crear una carpeta en local dónde voy a crear toda la estrutura de la página. para ello ejecuto:</p>
+<pre><code>hugo new site &lt;nombre_carpeta&gt;
+</code></pre><p>Una vez creada la carpeta tengo que crear un repositorio en ella, así que entro en la carpeta y ejecuto</p>
+<pre><code>git init
+</code></pre><h2 id="instalación-del-tema">Instalación del tema</h2>
+<p>Después descargo el tema que quiero utilizar, hay un buen catálogo de temas en la página de hugo: <a href="https://themes.gohugo.io/">https://themes.gohugo.io/</a></p>
+<p>En mi caso he usado Harbor y lo instalo desde la misma carpeta de la siguiente forma:</p>
+<pre><code>git submodule add https://github.com/matsuyoshi30/harbor.git themes/harbor
+</code></pre><p>Luego tengo que modificar el fichero <code>config.toml</code> para configurar el tema, para empezar he copiado el que aparece en la página del tema y a partir de ahí se puede personalizar.</p>
+<h2 id="modificar-plantilla-de-publicación">Modificar plantilla de publicación</h2>
+<p>Las plantillas de publicación se guardan en la carpeta <strong>archetypes</strong>, puedo crear tantas plantillas como tipos de publicación vaya a realizar, mi plantilla <code>default.md</code> tiene la siguiente cabecera:</p>
+<pre><code>---
+title: &quot;{{ replace .Name &quot;-&quot; &quot; &quot; | title }}&quot;
+author: Adanton
+date: {{ .Date }}
+draft: false
+tags: []
+categories: []
+toc: false
+backtotop: true
+disable_comments: true
+---
+</code></pre><h2 id="crear-una-publicación">Crear una publicación</h2>
+<p>Las publicaciones por defecto las tiene la plantilla en pa carpeta <code>content/posts</code> aunque esto se puede configurar en el fichero <code>config.toml</code></p>
+<p>Para publicar un post en esta plantilla solo tengo que ejecutar:</p>
+<pre><code>hugo new posts/Titulo_del_post.md
+</code></pre><p>Esto creará un fichero Markdown con la cabecera por defecto dónde puedo añadir el contenido a publicar.</p>
+<h2 id="ejecutar-el-servidor-en-local">Ejecutar el servidor en local</h2>
+<p>Para ver como funciona nuestra página sin tener que subirla a github, puedo ejecutar en la carpeta del proyecto la instrucción:</p>
+<pre><code>hugo server
+</code></pre><p>Con eso ya puedo entrar en la página http://localhost:1313 y puedo ver como funciona.</p>
+
+
 
       
-        <article class="post-preview">
-  <a href="https://adanton.github.io/posts/gitpages-con-hugo/">
-    <h2 class="post-title">Gitpages con Hugo</h2>
-  </a>
-  <div class="post-entry">
+        <div class="blog-tags">
+          
+            <a href="https://adanton.github.io/tags/github/">github</a
+            >&nbsp;
+          
+        </div>
+      
+    </article>
     
-      <p><p>He creado una página web en Github con Hugo para publicar notas y apuntes sobre las cosas que voy probando.</p></p>
-      <a href="https://adanton.github.io/posts/gitpages-con-hugo/" class="post-read-more"
-        ></a
-      >
-    
-  </div>
-
-  <div class="postmeta">
-    <span class="meta-post">
-  <em class="fa fa-calendar-alt"></em
-  >&nbsp;Mar 1, 2021
-  
-</span>
-
-  </div>
-</article>
-
-      
-    </div>
     
   </div>
 
