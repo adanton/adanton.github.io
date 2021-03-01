@@ -180,6 +180,12 @@ disable_comments: true
 <p>Para ver como funciona nuestra página sin tener que subirla a github, puedo ejecutar en la carpeta del proyecto la instrucción:</p>
 <pre><code>hugo server
 </code></pre><p>Con eso ya puedo entrar en la página http://localhost:1313 y puedo ver como funciona.</p>
+<h2 id="generar-la-pagina-web">Generar la pagina web</h2>
+<p>Antes de subir la página a Github tengo que generar la web estática, por defecto se genera en la carpeta <code>public</code> pero yo necesito que la genere en la carpeta <code>docs</code> para indicarle a Github que presente el contenido que está en ese directorio.</p>
+<p>Lo hago con el siguiente comando que también limpia las contenidos que se hayan borrado de la carpeta <code>content</code>:</p>
+<pre><code>hugo --cleanDestinationDir -d docs
+</code></pre><p>Después de esto ya puedo hacer un <code>git push</code> para subir todo a Github.</p>
+<p>Sería interesante ejecutar este comando siempre antes de hacer el <code>git push</code>, esto lo puedo hacer con el trigger que está en la carpeta <code>.git/hooks/pre-commit</code> pero esto lo comentaré en otro post aparte.</p>
 
 
 
@@ -192,6 +198,30 @@ disable_comments: true
         </div>
       
     </article>
+    
+      <script>
+  document.addEventListener('scroll', function () {
+    if (
+      document.body.scrollTop > 50 ||
+      document.documentElement.scrollTop > 50
+    ) {
+      document.getElementById('backtotopButton').style.opacity = '1'
+      document.getElementById('backtotopButton').style.transition = '0.5s'
+    } else {
+      document.getElementById('backtotopButton').style.opacity = '0'
+      document.getElementById('backtotopButton').style.transition = '0.5s'
+    }
+  })
+
+  function topFunction() {
+    document.body.scrollTop = 0 
+    document.documentElement.scrollTop = 0 
+  }
+</script>
+
+      <button onclick="topFunction()" id="backtotopButton">
+        <em class="fa fa-angle-up"></em>
+      </button>
     
     
   </div>
