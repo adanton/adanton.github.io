@@ -1,0 +1,5 @@
+---
+title: "Archivado"
+type: myarchivetype
+---
+

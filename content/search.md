@@ -1,0 +1,5 @@
+---
+title: "Buscar"
+---
+
+{{<search>}}

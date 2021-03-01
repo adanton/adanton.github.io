@@ -1,0 +1,75 @@
+theme = "harbor"
+baseurl = "https://adanton.github.io/"
+title = "Apuntes de Adanton"
+paginate = 3
+languageCode = "es"
+DefaultContentLanguage = "es"
+enableInlineShortcodes = true
+footnoteReturnLinkContents = "^"
+favicon = "favicon.ico" # static/images/icon.png
+
+# Optional
+# If you use googleAnalytics, you set top-level options in config.toml to the beginning of the config file like other top-level options.
+googleAnalytics = "UA-XXXXXXXX-XX"
+# and disqus too.
+# disqusShortName = "yourdisqusshortname"
+
+[params.goatcounter]
+  domain="stats.domain.com"
+
+[Author]
+  name = "Adanton"
+
+[outputs]
+  section = ["JSON", "HTML"]
+
+[[params.nav]]
+  identifier = "about"
+  name = "Acerca de"
+  icon = "fas fa-user fa-lg"
+  url = "/about/"
+  weight = 3
+
+[[params.nav]]
+  identifier = "tags"
+  name = "Etiquetas"
+  icon = "fas fa-tag fa-lg"
+  url = "tags"
+  weight = 3
+
+[[params.nav]]
+  identifier = "categories"
+  name = "Categorías"
+  icon = "fas fa-folder-open fa-lg"
+  url = "categories"
+  weight = 3
+
+[[params.nav]]
+  identifier = "search"
+  name = "Buscar"
+  icon = "fas fa-search fa-lg"
+  url = "search"
+  weight = 3
+
+[[params.nav]]
+  identifier = "archives"
+  name = "Archivo"
+  icon = "fas fa-archive fa-lg"
+  url = "archives"
+  weight = 3
+
+# copy paste this block and change for each social media to add how many ever social media
+# acounts/links you want
+[[params.social]]
+  name="telegram"
+  url="link to social media"
+  icon="A icon from https://fontawesome.com/"
+
+[params.logo]
+  url = "adanton.png" # static/images/icon.png
+  width = 50
+  height = 50
+  alt = "Logo"
+
+[params]
+  favicon = "favicon.ico" # static/images/icon.png
