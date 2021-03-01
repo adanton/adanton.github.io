@@ -1,2 +1,2 @@
 #!/bin/bash
-hugo -d docs
+hugo --cleanDestinationDir -d docs
