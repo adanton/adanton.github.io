@@ -1,5 +1,5 @@
 ---
-title: "Gitpage Con Hugo"
+title: "Gitpages con Hugo"
 author: Adanton
 date: 2021-03-01T19:22:32+01:00
 draft: false
